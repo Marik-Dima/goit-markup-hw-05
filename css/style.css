@@ -713,12 +713,16 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
     
     opacity: 1;
+    scale: 1;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-hidden{
     opacity: 0;
     pointer-events: none;
+
 }
+
+/* кнопка закриття модального вікна */
 .btn-modal-close{
     display: flex;
     padding: 0;
@@ -735,10 +739,25 @@ body {
 
 }
 
+/* зображення кнопки закриття модального вікна */
 .order-window .close{
     fill: var(--pure-black-color);
-    background-color: ;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* ховер  */
+.btn-modal-close:hover .close{
+    fill: var(--accent-color);
+}
+
+
+.backdrop.is-hidden .order-window{
+    scale: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),;
+}
+
 
 .order-window{
     position: absolute;
@@ -747,8 +766,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    min-width: 528px;
-    min-height: 581px;
+    width: 528px;
+    height: 581px;
 
     background-color: var(--primary-white-color);
 
@@ -756,5 +775,7 @@ body {
                 0px 1px 1px rgba(0, 0, 0, 0.14), 
                 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    scale: 1;
+    opacity: 1;
 }
 
