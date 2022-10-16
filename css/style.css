@@ -74,7 +74,7 @@ body {
     top:0;
     left: 0;
     width: 100%;
-    z-index: 9; /*максимальне значення*/
+    z-index: 9; /*максимальне значення більше тільки у модального вікна*/
 }
 
 .main-nav{
@@ -330,6 +330,7 @@ body {
 .work-title{
     display: flex;
     position: absolute;
+    
     width: 100%;
     height: 70px;
     bottom: 0;
@@ -704,6 +705,7 @@ body {
 /* модальне вікно замовити послугу -головна сторінка герой */
 .backdrop{
     position: fixed;
+    z-index: 10;
     top: 0;
     left: 0;
     width: 100%;
@@ -740,6 +742,7 @@ body {
 
 .order-window{
     position: absolute;
+    z-index: 10;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
